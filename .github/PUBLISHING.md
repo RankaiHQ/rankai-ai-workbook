@@ -1,14 +1,13 @@
-# Initial GitHub setup
+# Repository and site delivery
 
-The repository is currently local. No remote repository has been created or configured.
+Repository: https://github.com/RankaiHQ/rankai-ai-workbook (private).
 
-When the owner requests publication:
+The Documentation workflow builds pull requests and pushes to main. Its static-site artifact can be downloaded by authorized repository users and served with a local HTTP server. It is retained for 14 days.
 
-- Create `RankaiHQ/rankai-ai-workbook` as a **private** repository using the `mowtwo` account.
-- Set the description to: Practical AI workflows for everyday work at RankAI.
-- Use `main` as the default branch and push the local history.
-- Verify access for the intended RankAI members. Private visibility alone does not grant all organization members access; use the appropriate team or organization permissions.
-- Keep Issues enabled for suggestions and corrections.
-- Confirm the English README and Mermaid diagrams render correctly on GitHub.
+The website is not publicly deployed. Choose hosting with RankAI member authentication before publishing a team-facing URL. Do not enable public GitHub Pages merely because the repository is private.
 
-Use the account-specific `gh-mowtwo` and `git-mowtwo` wrappers when available. Do not publish ignored source notes.
+Build command: `npm ci && npm run docs:build`.
+Output: `docs/.vitepress/dist/`.
+For a subdirectory deployment, set `SITE_BASE` to its leading- and trailing-slash path at build time.
+
+Use `gh-mowtwo` and `git-mowtwo` for repository operations. Verify member access when adding collaborators; do not publish ignored notes.
