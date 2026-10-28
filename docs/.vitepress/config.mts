@@ -6,7 +6,7 @@ const chapters = [
 ]
 const sidebar = (lang: string) => [
   { text: lang === 'en' ? 'The workbook' : '实践手册', items: [
-    { text: lang === 'en' ? 'Overview' : '目录', link: `/${lang}/README` },
+    { text: lang === 'en' ? 'Overview' : '目录', link: lang === 'en' ? '/' : '/zh-CN/README' },
     ...chapters.map(([slug, en, zh]) => ({ text: lang === 'en' ? en : zh, link: `/${lang}/${slug}` }))
   ] }
 ]
@@ -18,20 +18,19 @@ export default defineConfig({
   lastUpdated: true,
   head: [['link', { rel: 'icon', type: 'image/svg+xml', href: `${process.env.SITE_BASE || '/'}favicon.svg` }]],
   locales: {
-    root: { label: 'English', lang: 'en', link: '/en/README', themeConfig: { sidebar: sidebar('en') } },
+    root: { label: 'English', lang: 'en', link: '/', themeConfig: { sidebar: sidebar('en') } },
     'zh-CN': { label: '简体中文', lang: 'zh-CN', link: '/zh-CN/README', themeConfig: {
       sidebar: sidebar('zh-CN'), outlineTitle: '本页内容',
       docFooter: { prev: '上一章', next: '下一章' }, lastUpdated: { text: '更新于' }
     } }
   },
   themeConfig: {
-    nav: [{ text: 'Read the book', link: '/en/README' }],
     outline: [2, 3],
     search: { provider: 'local', options: { miniSearch: { options: {
       tokenize: (text: string) => Array.from(new Intl.Segmenter('zh', { granularity: 'word' }).segment(text.toLowerCase()))
         .filter(s => s.isWordLike).map(s => s.segment)
     } } } },
-    socialLinks: [{ icon: 'github', link: 'https://github.com/RankaiHQ/rankai-ai-workbook' }]
+
   },
   markdown: {
     config(md) {
