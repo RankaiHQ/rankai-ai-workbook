@@ -2,7 +2,7 @@
 
 *草稿 · 个人工作实践。*
 
-[English — 主版本](../en/01-working-with-ai.md) · [目录](README.md)
+[目录](README.md)
 
 我使用 AI 没有什么特别的技巧。GitHub、Linear、Gmail 这类工具，都是工作中确实需要时才逐渐加入的。工具扩大了 Agent 能接触的范围；学会委托，才决定了我能把多少工作真正交出去。
 

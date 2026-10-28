@@ -2,7 +2,7 @@
 
 *Draft · Personal working practices.*
 
-[中文对照](../zh-CN/02-agent-loops.md) · [Contents](README.md)
+[Contents](README.md)
 
 Once I can delegate a task, the next step is to stop being the messenger between every stage. **An agent should be able to assign work, inspect the result, and decide what comes next—within boundaries I have already set.**
 

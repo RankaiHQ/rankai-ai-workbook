@@ -12,3 +12,12 @@
 .workbook-diagram svg { display: block; margin: auto; max-width: 100%; height: auto; }
 .workbook-diagram pre { white-space: pre-wrap; font-size: 12px; }
 @media print { .VPNav, .VPSidebar, .VPDocAside, .VPDocFooter { display: none !important; } .VPContent { padding: 0 !important; } }
+/* Match the line height Mermaid uses while measuring its HTML labels. */
+.vp-doc .workbook-diagram p { margin: 0; line-height: 1.5; }
+.VPNavBarTranslations, .VPNavScreenTranslations,
+.VPNavBarExtra .translations { display: none !important; }
+.workbook-language { display: flex; align-items: center; gap: 7px; margin-left: 14px; white-space: nowrap; font-size: 13px; }
+.workbook-language > span { color: var(--vp-c-text-2); }
+.workbook-language a { color: var(--vp-c-brand-1); padding: 8px 2px; font-weight: 600; }
+.workbook-language a:focus-visible { outline: 2px solid var(--vp-c-brand-1); outline-offset: 3px; }
+@media (max-width: 480px) { .VPNavBarTitle .title { font-size: 14px; } .workbook-language { margin-left: 8px; gap: 5px; } }

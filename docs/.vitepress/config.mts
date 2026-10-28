@@ -21,12 +21,13 @@ export default defineConfig({
     root: { label: 'English', lang: 'en', link: '/', themeConfig: { sidebar: sidebar('en') } },
     'zh-CN': { label: '简体中文', lang: 'zh-CN', link: '/zh-CN/README', themeConfig: {
       sidebar: sidebar('zh-CN'), outlineTitle: '本页内容',
+      returnToTopLabel: '返回顶部', sidebarMenuLabel: '目录', darkModeSwitchLabel: '主题', langMenuLabel: '切换语言',
       docFooter: { prev: '上一章', next: '下一章' }, lastUpdated: { text: '更新于' }
     } }
   },
   themeConfig: {
     outline: [2, 3],
-    search: { provider: 'local', options: { miniSearch: { options: {
+    search: { provider: 'local', options: { locales: { 'zh-CN': { translations: { button: { buttonText: '搜索', buttonAriaLabel: '搜索' }, modal: { noResultsText: '没有找到结果', resetButtonTitle: '清空搜索', displayDetails: '显示详情', footer: { selectText: '选择', navigateText: '切换', closeText: '关闭' } } } } }, miniSearch: { options: {
       tokenize: (text: string) => Array.from(new Intl.Segmenter('zh', { granularity: 'word' }).segment(text.toLowerCase()))
         .filter(s => s.isWordLike).map(s => s.segment)
     } } } },

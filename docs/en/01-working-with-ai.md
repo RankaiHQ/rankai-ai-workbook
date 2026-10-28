@@ -2,7 +2,7 @@
 
 *Draft · Personal working practices.*
 
-[中文对照](../zh-CN/01-working-with-ai.md) · [Contents](README.md)
+[Contents](README.md)
 
 I do not have a special trick for using AI. I add tools such as GitHub, Linear, and Gmail only when real work calls for them. Integrations expand what an agent can access; learning to delegate changes how much work I can actually hand over.
 
