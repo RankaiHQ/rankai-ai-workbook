@@ -1,48 +1,24 @@
 # Chapter 1: Let Go, Recognize Risk, and Communicate Clearly
 
-*Draft · Based on my personal working practices.*
+*Draft · Personal working practices.*
 
 [中文对照](../zh-CN/01-working-with-ai.md) · [Contents](README.md)
 
-I do not have a special trick for working with AI. I do not start by collecting MCP servers, skills, or plugins, either. Learning to work with AI is gradual, and the workflow has to fit the person using it.
+I do not have a special trick for using AI. I add tools such as GitHub, Linear, and Gmail only when real work calls for them. Integrations expand what an agent can access; learning to delegate changes how much work I can actually hand over.
 
-I add integrations when a real task calls for them: Git, GitHub, Linear, Gmail, and so on. These tools give an agent access to more of my working environment. By themselves, they do not guarantee better judgment or better results. For me, adding them has been part of a more important process: gradually learning to delegate.
+For me, that comes down to three habits: **let go, recognize risk, and communicate clearly.**
 
-Developers tend to have strong engineering instincts and a healthy concern for safety. Those are valuable qualities. The adjustment is learning how to use them when we are no longer doing every step ourselves.
+## 1. Let go: direct the work, judge the result
 
-My approach comes down to three habits:
+Experienced engineers like to control the details. With AI, I try to act more like a technical lead: define the outcome, divide the work, and remove blockers. Repeatedly polishing a clever implementation should not make me the bottleneck.
 
-1. Let go of doing everything yourself.
-2. Recognize risk and prepare a way back.
-3. Communicate clearly, especially when something goes wrong.
+My review starts with behavior: **Does the core journey work? Does it meet the requirement? Have the important failure paths been checked?** Code quality still matters, and high-risk areas deserve deeper review. But I do not need to personally rewrite every line to take responsibility for the result.
 
-## 1. Let go of doing everything yourself
+I prefer focused module cleanup and simplification after a substantial release, rather than speculative optimization throughout delivery. Known correctness and security problems still need attention immediately.
 
-Experienced engineers often want to control every detail. In systems work, that instinct can be useful. But when I work with AI, I try to act more like a technical lead: define the outcome, divide the work, remove blockers, and judge the result.
+### Onboard the agent through real work
 
-I do not want to become the bottleneck because I am attached to a clever line of code and keep rewriting it. My experience is more useful when I apply it to questions such as: Does this module meet the requirement? Is the behavior correct? What still needs to be checked?
-
-### Review for outcomes
-
-This can sound like stepping away from responsibility. I see it as changing where I spend my attention.
-
-Neither handwritten nor AI-generated code can be exhaustively checked against every possible edge case. I therefore put more emphasis on validating behavior, in a way that resembles QA: the core user journey must work, the important failure paths must be considered, and the implementation must stay aligned with the actual request.
-
-That does not make code quality, security, or architecture irrelevant. It means I start with the intended behavior and focus deeper review on the parts whose failure would matter most. I do not need to design every conceivable test case myself, but I do need evidence that the core requirement has been met.
-
-### Make room for deliberate cleanup
-
-Code deterioration is real. In my experience, rapid AI-assisted changes can make it worse when no one steps back to examine the whole system.
-
-My preference is to schedule focused cleanup after a substantial version lands: separate modules, simplify code, and remove accumulated complexity. AI can do much of that work, too. I would rather make it an explicit task than repeatedly interrupt delivery for speculative optimization.
-
-This is a sequencing preference, not a reason to defer known correctness or security problems. A defect that threatens the current release should be addressed in the current release.
-
-### Treat a fresh agent like a new teammate
-
-I particularly like starting with a freshly checked-out repository and an agent that has no accumulated conversational memory. A clean context gives us a chance to examine the code without carrying forward every assumption from earlier sessions.
-
-My usual sequence is:
+I like a fresh checkout and a fresh agent context. Then I follow a sequence much like onboarding a teammate:
 
 ```mermaid
 flowchart TD
@@ -56,54 +32,19 @@ flowchart TD
     H --> E
 ```
 
-It feels much like onboarding a new teammate. In my own experience, this can move surprisingly quickly—sometimes roughly a week from unfamiliarity to making meaningful contributions. That is a personal observation, not a promise that every repository or task will follow the same timeline.
+In my experience, roughly a week can be enough to move from unfamiliarity to meaningful contributions. Along the way, I ask the agent to teach me what each business function does, why it exists, and whether it needs to change.
 
-During that process, I regularly ask the agent to teach me: What does this business function do? Why was it introduced? Does it still serve the current need, or should it change?
+**The code is my starting point for knowledge.** Documentation should preserve intent and constraints, not replace checking the implementation. I keep useful decisions and lessons in task and memory files, and periodically ask the agent to remove stale or redundant material.
 
-### Keep knowledge close to the code
+## 2. Recognize risk: know when to intervene
 
-I treat the repository as the primary source for understanding implemented behavior. Before building a large separate knowledge base, I want the agent to inspect what actually exists.
+Engineering experience gives us technical imagination: a sense of what is possible and what might break. Knowing about memory, networks, or remote access lets us ask for more specific outcomes—and recognize when an agent takes an unreasonable shortcut.
 
-I have found that fixed summaries can turn into inherited assumptions. If they are not maintained, the agent may repeat an old explanation instead of checking whether it is still true.
+I watch for lost constraints, repeated failures, and workarounds that create bigger problems. A useful intervention is simple:
 
-That does not mean all documentation is wasted effort. Code shows what the system does; concise documentation can preserve intent, constraints, and decisions that the code alone cannot explain. My preference is to keep that material small and connected to the work.
+> Stop here. Keep the original constraint. Retry that path, or tell me what information or access you need from me.
 
-A task file and a memory file can be useful working references: current goals, decisions, mistakes, and lessons from recent tasks. They should not grow forever. I periodically ask the agent to check them against the repository, remove stale material, and keep only what will help the next task.
-
-## 2. Recognize risk and prepare a way back
-
-This is where engineering experience becomes especially valuable. Years alone are not the point. Familiarity with operating systems, networks, databases, and algorithms gives you a wider sense of what is possible—and what can go wrong.
-
-I think of that as technical imagination.
-
-One person might ask, “Make my computer easier to use.” Someone with more system knowledge might ask, “Help me understand and reduce unnecessary memory usage,” or, “Let me use an AI agent on one computer to operate several other machines.”
-
-The difference is not just vocabulary. Knowing that remote access and SSH exist changes the solutions you can imagine. Knowing how state, resource ownership, and cleanup work changes the failures you can recognize.
-
-### Notice when the agent takes a wrong turn
-
-Consider a React effect that repeatedly triggers itself, or one that starts subscriptions or asynchronous work without appropriate cleanup. Someone unfamiliar with the mechanics may only see a slow interface, stale state, or a frozen application. An experienced developer has more useful hypotheses to investigate.
-
-I do not expect to inspect every implementation detail manually. Often, the agent identifies these problems before I do. But I still watch for a change in direction: lost constraints after a long conversation is summarized, repeated failed attempts, or a workaround that solves one obstacle by creating a larger problem.
-
-At that point, a timely intervention can be simple:
-
-> Stop here. The failed approach does not justify changing that constraint. Try the original path again, or tell me what access or information you need from me.
-
-Experience helps me interrupt unproductive work. It also helps me distinguish a small, recoverable mistake from a genuinely dangerous operation.
-
-### Plan recovery before a consequential change
-
-“Make a backup” is useful, but incomplete. I also want the agent to explain how we would restore the previous state.
-
-Depending on the task, that might involve a Git revert, a database backup with a tested restoration procedure, a snapshot, or a rollback script. These mechanisms solve different problems; a code revert, for example, does not restore deleted production data.
-
-Before a consequential operation, I want to understand:
-
-- What will change, and what could be affected?
-- What state needs to be preserved?
-- How will we recover if the operation fails?
-- Which step requires my approval?
+**Before a consequential change, I want a recovery plan—not just a backup.** What could be affected? What state must be preserved? How would we restore it? A code revert cannot recover deleted production data.
 
 ```mermaid
 flowchart TD
@@ -118,30 +59,16 @@ flowchart TD
     G -->|No| I[Stop and recover using the agreed plan]
 ```
 
-### Delegate access with clear boundaries
+I delegate access with explicit boundaries: mostly read-only, limited writes, and approval before consequential changes. Instructions help; actual permissions and execution controls must support them.
 
-I am comfortable giving an agent access to work resources when the boundaries are explicit: mostly read-only access, limited write permissions, and consultation before consequential changes.
+The payoff is context. An agent that can read both a colleague's question and the repository can investigate how a customer's article is processed, instead of merely summarizing the conversation.
 
-A clear instruction helps, but I do not treat a sentence in a prompt as a guarantee. Available permissions and the agent's execution controls should support the same boundary.
+## 3. Communicate clearly: turn frustration into instructions
 
-This is a significant step toward useful delegation. For example, a Slack summary can tell me what colleagues discussed. An agent with access to both the conversation and the repository can go further: investigate how a customer's article is actually processed, find the relevant implementation, and explain the answer with supporting evidence.
+I have been frustrated by repeated mistakes and endless apologies. But anger does not tell the agent what to fix. I cannot infer from a bad interaction that a provider downgraded the model; I can see when the conversation stops producing useful information.
 
-The benefit comes from connecting the question to the right context, while keeping access proportional to the task.
+Instead of an accusation, I give a concrete correction:
 
-## 3. Communicate clearly, especially when frustrated
+> Stop. This violates the requirement: ___. Preserve the current state, explain what changed, and propose the smallest correction. Ask before irreversible actions.
 
-Everyone gets frustrated. I have been angry when an agent seemed less capable than expected, repeated mistakes, or spent its time apologizing instead of moving the work forward.
-
-I cannot establish from those experiences that a provider switched me to a weaker model because I was angry. What I can observe is that an exchange full of accusations and apologies gives us less useful information to work with.
-
-Insults do not explain the bug, restore a missing constraint, or define an acceptable result. They add conversation without helping the next decision.
-
-Instead, I try to make the correction concrete:
-
-> Stop. The result violates this requirement: ___. Preserve the current state, explain what changed, and propose the smallest correction. Ask before taking any irreversible action.
-
-The agent needs a clear objective, relevant context, and a way to tell whether the result is acceptable. When those are in place, I can give it room to continue without checking every step.
-
-If it asks a multiple-choice question and every option is wrong, I do not force the task into one of those options. I explain the missing requirement and ask it to reassess the work already completed against that requirement.
-
-For me, learning to work with AI has meant gradually shifting from doing every step to directing the work: giving it room, recognizing when to intervene, and making each intervention useful.
+If every option in the agent's question is wrong, I explain the missing requirement and ask it to recheck the work already done. A clear goal, relevant context, and a definition of success give it room to keep working.
