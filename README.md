@@ -17,7 +17,7 @@ This workbook turns firsthand working practices into clear, reusable guides. Eac
 - [Article template](templates/workflow.md)
 - [Contributing](CONTRIBUTING.md)
 
-Private workbook for RankAI members.
+Published for the RankAI team (and anyone with the link).
 
 English is the primary edition and source of truth. Chinese versions are maintained as companion translations.
 
@@ -39,8 +39,6 @@ The static output is `docs/.vitepress/dist/`. Set `SITE_BASE=/your-path/` when b
 
 ## CI and delivery
 
-GitHub Actions builds every pull request and push to `main`, and can be run manually. Each successful run publishes the static site as a repository-access-controlled Actions artifact named `rankai-ai-workbook-site`, retained for 14 days.
-
-No public website is deployed. Use authenticated hosting for a team website; a private source repository does not by itself make GitHub Pages private.
+GitHub Actions builds every pull request and push to `main`, and can be run manually. On `main`, the workflow deploys the site to GitHub Pages at https://rankaihq.github.io/rankai-ai-workbook/ (`SITE_BASE=/rankai-ai-workbook/`). Pull requests still upload a build artifact named `rankai-ai-workbook-site` (14-day retention) for review.
 
 Vite is overridden to the patched 6.4 series because VitePress 1.6.4 otherwise resolves an older development server dependency. Keep the lockfile and verify the site build when updating dependencies.
