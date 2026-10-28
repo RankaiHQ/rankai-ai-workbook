@@ -1,5 +1,5 @@
 # English guides
 
-The workbook is currently collecting source material. No workflow articles have been published yet.
+English is the primary edition. Chapters marked Draft are awaiting author review.
 
-Each article will follow a real task, explaining how AI is used, where human judgment matters, and how results are checked.
+1. [Let Go, Recognize Risk, and Communicate Clearly](01-working-with-ai.md) — Draft

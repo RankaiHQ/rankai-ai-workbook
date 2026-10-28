@@ -8,7 +8,7 @@ This workbook turns firsthand working practices into clear, reusable guides. Eac
 
 ## Contents
 
-The initial structure is ready. Workflow articles will be added as the author shares concrete examples.
+1. [Let Go, Recognize Risk, and Communicate Clearly](docs/en/01-working-with-ai.md) — Draft
 
 - [English guides — primary edition](docs/en/README.md)
 - [Chinese companion guides](docs/zh-CN/README.md)
