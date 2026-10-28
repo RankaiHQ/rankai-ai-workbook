@@ -1,6 +1,6 @@
 ---
 authors:
-  - mowtwo
+  - Wencheng
 ---
 
 # Chapter 2: Let Agents Keep the Work Moving

@@ -1,6 +1,6 @@
 ---
 authors:
-  - mowtwo
+  - Wencheng
 ---
 
 # Chapter 1: Let Go, Recognize Risk, and Communicate Clearly

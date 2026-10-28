@@ -19,13 +19,13 @@ Run `npm ci` and `npm run docs:build` before submitting a change. The build vali
 
 ## Authors and editing time
 
-Add an `authors` list to each article's YAML frontmatter, using stable GitHub handles. Include all coauthors and use identical handles in both language editions. The site generates author labels and the author directory automatically; no central registry is required.
+Add an `authors` list to each article's YAML frontmatter, using consistent author display names. Include all coauthors and use identical names in both language editions. The site generates author labels and the author directory automatically; no central registry is required.
 
 ```yaml
 ---
 authors:
-  - your-github-handle
-  - coauthor-handle
+  - Your Name
+  - Coauthor Name
 ---
 ```
 

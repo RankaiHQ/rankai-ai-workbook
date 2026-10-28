@@ -1,6 +1,6 @@
 ---
 authors:
-  - mowtwo
+  - Wencheng
 ---
 
 # 第一章：学会放手、判断风险，以及好好说话

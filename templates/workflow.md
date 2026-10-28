@@ -1,6 +1,6 @@
 ---
 authors:
-  - your-github-handle
+  - Your Name
 ---
 
 # <Workflow title>
