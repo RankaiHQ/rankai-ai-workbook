@@ -7,6 +7,7 @@ const chapters = [
 const sidebar = (lang: string) => [
   { text: lang === 'en' ? 'The workbook' : '实践手册', items: [
     { text: lang === 'en' ? 'Overview' : '目录', link: lang === 'en' ? '/' : '/zh-CN/README' },
+    { text: lang === 'en' ? 'Browse by author' : '按作者分类', link: `/${lang}/authors` },
     ...chapters.map(([slug, en, zh]) => ({ text: lang === 'en' ? en : zh, link: `/${lang}/${slug}` }))
   ] }
 ]

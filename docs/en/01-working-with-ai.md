@@ -1,6 +1,9 @@
-# Chapter 1: Let Go, Recognize Risk, and Communicate Clearly
+---
+authors:
+  - mowtwo
+---
 
-*Draft · Personal working practices.*
+# Chapter 1: Let Go, Recognize Risk, and Communicate Clearly
 
 [Contents](README.md)
 

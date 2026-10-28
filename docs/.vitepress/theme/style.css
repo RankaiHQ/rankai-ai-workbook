@@ -21,3 +21,10 @@
 .workbook-language a { color: var(--vp-c-brand-1); padding: 8px 2px; font-weight: 600; }
 .workbook-language a:focus-visible { outline: 2px solid var(--vp-c-brand-1); outline-offset: 3px; }
 @media (max-width: 480px) { .VPNavBarTitle .title { font-size: 14px; } .workbook-language { margin-left: 8px; gap: 5px; } }
+.article-meta { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-bottom: 22px; font-size: 13px; color: var(--vp-c-text-2); align-items: center; }
+.author-labels, .author-filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.author-tag { display: inline-block; border: 1px solid var(--vp-c-divider); border-radius: 999px; padding: 2px 10px; color: var(--vp-c-brand-1); font-size: 13px; line-height: 1.8; text-decoration: none !important; }
+.author-tag:hover, .author-tag[aria-pressed='true'] { background: var(--vp-c-brand-soft); border-color: var(--vp-c-brand-1); }
+.author-tag:focus-visible { outline: 2px solid var(--vp-c-brand-1); outline-offset: 2px; }
+.author-directory li { margin: 20px 0; }
+.author-directory .author-labels { margin-top: 6px; }

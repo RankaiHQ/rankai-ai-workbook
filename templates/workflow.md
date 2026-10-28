@@ -1,6 +1,9 @@
-# <Workflow title>
+---
+authors:
+  - your-github-handle
+---
 
-Status: Draft
+# <Workflow title>
 
 ## The problem
 

@@ -1,6 +1,9 @@
-# 第二章：让 Agent 自主循环起来
+---
+authors:
+  - mowtwo
+---
 
-*草稿 · 个人工作实践。*
+# 第二章：让 Agent 自主循环起来
 
 [目录](README.md)
 

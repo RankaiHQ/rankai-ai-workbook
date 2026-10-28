@@ -1,6 +1,9 @@
-# Chapter 2: Let Agents Keep the Work Moving
+---
+authors:
+  - mowtwo
+---
 
-*Draft · Personal working practices.*
+# Chapter 2: Let Agents Keep the Work Moving
 
 [Contents](README.md)
 
