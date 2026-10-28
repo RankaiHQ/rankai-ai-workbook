@@ -10,6 +10,8 @@ This workbook turns firsthand working practices into clear, reusable guides. Eac
 
 1. [Let Go, Recognize Risk, and Communicate Clearly](docs/en/01-working-with-ai.md) — Draft
 
+2. [Let Agents Keep the Work Moving](docs/en/02-agent-loops.md) — Draft
+
 - [English guides — primary edition](docs/en/README.md)
 - [Chinese companion guides](docs/zh-CN/README.md)
 - [Article template](templates/workflow.md)
