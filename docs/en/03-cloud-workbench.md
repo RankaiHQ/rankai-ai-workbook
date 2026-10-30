@@ -33,7 +33,9 @@ Every run ends with a notification of a few lines that fits on a phone screen. I
 
 The workbench is a claude.ai Artifact. The page is only a shell; everything it shows lives in the artifact's database, which all three tasks read and write, and the tasks never republish the page. Changing the page and changing a prompt therefore never interfere.
 
-The database holds five kinds of content: one document per issue, with its status, linked PRs, one line on where it stands, and who we are waiting on; today's to-dos on a four-quadrant grid of do now, plan, quick replies, and when free, where a reply to-do carries an English draft and a link to the original message; today's main-line issue; notes to the AI, for facts the tasks cannot see, such as an offline conversation, which the next run folds in and deletes; and the reports, the timesheets, and a few log lines per run. Each task reads only the collections it needs, which is what keeps its context from growing.
+The page's sections, top to bottom, are in the figure below; each one maps to a collection in the database. Each task reads only the collections it needs, which is what keeps its context from growing.
+
+<WorkbenchFigure lang="en" />
 
 ### The cloud reports; local agents dispatch
 

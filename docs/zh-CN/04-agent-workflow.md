@@ -19,6 +19,10 @@ authors:
 
 ### 角色
 
+Herdr 的结构有四层，下面的角色分别住在不同的层里：lead 独占一个 workspace，每个 issue 的 worker 占一个 worktree workspace，reviewer 是 worker 旁边的一个 pane。
+
+<HerdrLayers lang="zh" />
+
 | 角色 | 是什么 | 做什么 | 不能做什么 |
 |---|---|---|---|
 | Lead | 带 `rankai-lead` skill 的 Claude，位于单独的 Herdr workspace | 把 Linear、Slack 和 GitHub 的信息分诊到看板；为可以开工的 issue 写 brief；经我同意后启动 worker；照看 worker；merge 之后清理 | 写代码、push、未经我说“send”就对外发言、修改 issue 的状态或负责人、替我回答 |
@@ -27,7 +31,9 @@ authors:
 | Explorer | 另一个 Claude，位于独立的 Herdr tab，通过 Playwright MCP 操作我的 Chrome；只在页面状态难找时启动 | 在真实页面上找到状态、核对选择器，写好截图和录屏脚本交回 worker | 在生产环境中点击任何东西；自己交付截图 |
 | 我 | — | 所有决定：开工、push、merge、对外发言、回答问题 | — |
 
-最初的版本由一个 agent 既派单又写代码。拆开之后，lead 的上下文里不再有代码，各个 issue 之间也互相隔离。同一时间最多进行三个 issue。
+最初的版本由一个 agent 既派单又写代码。拆开之后，lead 的上下文里不再有代码，各个 issue 之间也互相隔离。同一时间最多进行三个 issue。一个 issue 进行中时，屏幕上是这样：
+
+<HerdrScreen lang="zh" />
 
 ### 一个 issue 的完整流程
 

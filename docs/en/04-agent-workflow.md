@@ -19,6 +19,10 @@ The two rules I care about most: the agent that dispatches never touches code, a
 
 ### Roles
 
+Herdr has four layers, and the roles below live on different ones: the lead has a workspace of its own, each issue's worker has a worktree workspace, and the reviewer is a pane beside the worker.
+
+<HerdrLayers lang="en" />
+
 | Role | What it is | What it does | What it may not do |
 |---|---|---|---|
 | Lead | Claude with the `rankai-lead` skill, in its own Herdr workspace | Triages Linear, Slack, and GitHub into a board; writes a brief for each ready issue; starts a worker when I approve; watches workers; cleans up after merge | Write code, push, post without my "send", change issue status or owner, answer for me |
@@ -27,7 +31,9 @@ The two rules I care about most: the agent that dispatches never touches code, a
 | Explorer | A second Claude in its own Herdr tab, driving my Chrome through Playwright MCP; started only when a page state is hard to find | Finds the states on the real page, checks selectors, and hands the screenshot and recording scripts back to the worker | Click anything in production; deliver screenshots of its own |
 | Me | — | Every decision: start, push, merge, external posts, answers | — |
 
-In the first version, one agent both dispatched and wrote code. Splitting them keeps code out of the lead's context and keeps each issue isolated from the others. At most three issues run at once.
+In the first version, one agent both dispatched and wrote code. Splitting them keeps code out of the lead's context and keeps each issue isolated from the others. At most three issues run at once. With one issue in progress, the screen looks like this:
+
+<HerdrScreen lang="en" />
 
 ### One issue, end to end
 
