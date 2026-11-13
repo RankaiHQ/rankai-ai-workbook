@@ -5,17 +5,17 @@ const T = {
   zh: {
     label: 'Herdr 的四层结构',
     session: ['session', '后台 server。关掉终端窗口，agent 仍在运行；再执行 herdr 就接回来'],
-    workspace: ['workspace', '每个目录一个。lead 在 rankai-hq；每个 issue 的 worktree 各一个，例如 ran-525'],
-    tab: ['tab', '同一个 workspace 里的不同布局：1 放 agent，2 放 dev server，visual 给 explorer'],
-    panes: [['claude', 'worker'], ['codex', 'reviewer，只读'], ['steps.md', '步骤面板，文件一改就重画']],
+    workspace: ['workspace', '每个目录一个。lead 在 rankai-hq；每个 issue 的 worktree 各一个，例如 ran-525；每个 scout 一个只读的 worktree'],
+    tab: ['tab', '同一个 workspace 里的不同布局：1 放 worker 和 shell，视觉检查进行时多一个 visual，显示步骤清单'],
+    panes: [['claude', 'worker'], ['review', 'Codex 每一轮的进度，只读'], ['shell', '完整检查，等待 CI']],
     caption: 'agent 不是单独的一层，而是在某个 pane 里运行、被 Herdr 识别出的进程。退出 claude，这个 pane 就变回普通终端。'
   },
   en: {
     label: 'The four layers of Herdr',
     session: ['session', 'The background server. Close the terminal window and the agents keep running; run herdr again to reconnect'],
-    workspace: ['workspace', 'One per directory: the lead in rankai-hq, and one per issue worktree, such as ran-525'],
-    tab: ['tab', 'Different layouts inside one workspace: 1 for the agents, 2 for the dev server, visual for the explorer'],
-    panes: [['claude', 'worker'], ['codex', 'reviewer, read-only'], ['steps.md', 'steps pane, redrawn on every change']],
+    workspace: ['workspace', 'One per directory: the lead in rankai-hq, one per issue worktree, such as ran-525, and a read-only worktree per scout'],
+    tab: ['tab', 'Different layouts inside one workspace: 1 for the worker and its shell; a visual check adds visual, with the steps list'],
+    panes: [['claude', 'worker'], ['review', 'each Codex round as it runs, read-only'], ['shell', 'the full check, the wait for CI']],
     caption: 'An agent is not a layer of its own: it is a process running in some pane that Herdr recognizes. Quit claude and that pane is a plain terminal again.'
   }
 }
