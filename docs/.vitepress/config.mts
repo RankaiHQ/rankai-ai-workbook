@@ -2,7 +2,9 @@ import { defineConfig } from 'vitepress'
 
 const chapters = [
   ['01-working-with-ai', '1. Let Go, Recognize Risk, Communicate', '1. 放手、风险与沟通'],
-  ['02-agent-loops', '2. Let Agents Keep Work Moving', '2. 让 Agent 自主循环']
+  ['02-agent-loops', '2. Let Agents Keep Work Moving', '2. 让 Agent 自主循环'],
+  ['03-cloud-workbench', '3. Let Scheduled Agents Plan My Day', '3. 让定时 Agent 排好今天'],
+  ['04-agent-workflow', '4. One Board Agent, Many Workers', '4. 一个看板 Agent，多个 Worker']
 ]
 const sidebar = (lang: string) => [
   { text: lang === 'en' ? 'The workbook' : '实践手册', items: [
